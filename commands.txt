@@ -1,0 +1,15 @@
+# Test 1: Check if index exists
+curl "http://localhost:7700/indexes/sku"
+
+# Test 2: Search for "FEVICOL"
+curl "http://localhost:7700/indexes/sku/search" \
+  -H "Content-Type: application/json" \
+  -d '{"q": "FEVICOL", "limit": 5}'
+
+# Test 3: Search for "Adhesives"
+curl "http://localhost:7700/indexes/sku/search" \
+  -H "Content-Type: application/json" \
+  -d '{"q": "Adhesives", "limit": 3}'
+
+# Test 4: Get index stats
+curl "http://localhost:7700/indexes/sku/stats"
